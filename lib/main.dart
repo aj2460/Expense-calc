@@ -16,12 +16,18 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("My App"),
-      ),
-      body: Center(
-        child: Text("My Apps"),
-      ),
-    );
+        appBar: AppBar(
+          title: Text("My App"),
+        ),
+        body: Column(
+          children: [
+            Card(
+              child: Text("CHART"),
+            ),
+            Card(
+              child: Text("List of Transaction"),
+            )
+          ],
+        ));
   }
 }
