@@ -6,6 +6,10 @@ class NewTransaction extends StatelessWidget {
   final titleControler = TextEditingController();
   final amountController = TextEditingController();
 
+  final Function _addTransactionHandler;
+
+  NewTransaction(this._addTransactionHandler);
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -26,8 +30,10 @@ class NewTransaction extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                print(titleControler.text);
-                print(amountController.text);
+                _addTransactionHandler(
+                  titleControler.text,
+                  double.parse(amountController.text),
+                );
               },
               child: Text(
                 "Add Transaction",
