@@ -20,13 +20,17 @@ class MyHomePage extends StatelessWidget {
           title: Text("My App"),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Card(
-              child: Text("CHART"),
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Color.fromRGBO(128, 128, 128, .5),
+                child: Text("CHART"),
+              ),
             ),
-            Card(
-              child: Text("List of Transaction"),
-            )
+            Text("Transaction")
           ],
         ));
   }
