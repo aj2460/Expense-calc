@@ -33,7 +33,7 @@ class MyHomePage extends StatelessWidget {
         title: Text("My App"),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
@@ -41,6 +41,29 @@ class MyHomePage extends StatelessWidget {
             child: Card(
               color: Color.fromRGBO(128, 128, 128, .5),
               child: Text("CHART"),
+            ),
+          ),
+          Card(
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(labelText: "Title"),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: "Amount"),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Add Transaction",
+                      style: TextStyle(color: Colors.purple),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           Column(
