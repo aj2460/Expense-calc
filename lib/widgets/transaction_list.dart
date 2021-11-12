@@ -22,7 +22,7 @@ class TransactionList extends StatelessWidget {
                     border: Border.all(color: Colors.purple),
                   ),
                   child: Text(
-                    _userTransactions[index].amount.toString(),
+                    _userTransactions[index].amount.toStringAsFixed(2),
                     style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
