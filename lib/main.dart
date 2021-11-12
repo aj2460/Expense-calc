@@ -21,8 +21,14 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {},
+      ),
       appBar: AppBar(
         title: Text("My App"),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
       ),
       body: SingleChildScrollView(
         child: Column(
