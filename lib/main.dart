@@ -16,8 +16,11 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  String titleIInpt = "";
-  String amountInput = "";
+  // String titleIInpt = "";
+  // String amountInput = "";
+
+  final titleControler = TextEditingController();
+  final amountController = TextEditingController();
 
   final List<Transaction> transactions = [
     Transaction(
@@ -54,16 +57,18 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   TextField(
                     decoration: InputDecoration(labelText: "Title"),
-                    onChanged: (val) => titleIInpt = val,
+                    controller: titleControler,
+                    //onChanged: (val) => titleIInpt = val,
                   ),
                   TextField(
                     decoration: InputDecoration(labelText: "Amount"),
-                    onChanged: (val) => amountInput = val,
+                    controller: amountController,
+                    // onChanged: (val) => amountInput = val,
                   ),
                   TextButton(
                     onPressed: () {
-                      print(titleIInpt);
-                      print(amountInput);
+                      print(titleControler.text);
+                      print(amountController.text);
                     },
                     child: Text(
                       "Add Transaction",
