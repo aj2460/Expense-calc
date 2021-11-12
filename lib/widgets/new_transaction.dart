@@ -13,7 +13,6 @@ class NewTransaction extends StatefulWidget {
 
 class _NewTransactionState extends State<NewTransaction> {
   final titleControler = TextEditingController();
-
   final amountController = TextEditingController();
 
   void submitData() {
@@ -22,6 +21,7 @@ class _NewTransactionState extends State<NewTransaction> {
     if (enteredTitle.isEmpty || enteredAmount <= 0) return;
 
     widget._addTransactionHandler(enteredTitle, enteredAmount);
+    Navigator.of(context).pop();
   }
 
   @override
