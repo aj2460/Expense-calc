@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  String titleIInpt = "";
+  String amountInput = "";
+
   final List<Transaction> transactions = [
     Transaction(
         id: "t1", title: "New Shoes", amount: 69.99, date: DateTime.now()),
@@ -51,12 +54,17 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   TextField(
                     decoration: InputDecoration(labelText: "Title"),
+                    onChanged: (val) => titleIInpt = val,
                   ),
                   TextField(
                     decoration: InputDecoration(labelText: "Amount"),
+                    onChanged: (val) => amountInput = val,
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print(titleIInpt);
+                      print(amountInput);
+                    },
                     child: Text(
                       "Add Transaction",
                       style: TextStyle(color: Colors.purple),
