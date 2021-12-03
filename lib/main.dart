@@ -89,8 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    bool isLandScape =
-        MediaQuery.of(context).orientation == Orientation.landscape;
+    final mediaQuery = MediaQuery.of(context);
+    bool isLandScape = mediaQuery.orientation == Orientation.landscape;
     final appBar = AppBar(
       title: Text("Personal Expenses"),
       actions: [
@@ -101,9 +101,9 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     final txList = Container(
-      height: (MediaQuery.of(context).size.height -
+      height: (mediaQuery.size.height -
               appBar.preferredSize.height -
-              MediaQuery.of(context).padding.top) *
+              mediaQuery.padding.top) *
           0.8,
       child: TransactionList(_userTransactions, _deleteTransaction),
     );
@@ -135,9 +135,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             if (!isLandScape) //executes only in portrait
               Container(
-                height: (MediaQuery.of(context).size.height -
+                height: (mediaQuery.size.height -
                         appBar.preferredSize.height -
-                        MediaQuery.of(context).padding.top) *
+                        mediaQuery.padding.top) *
                     .3,
                 child: Chart(_recentTranactions),
               ),
@@ -145,9 +145,9 @@ class _MyHomePageState extends State<MyHomePage> {
             if (isLandScape) //show chart or list depending on the switch and also if only in landscape
               _showChart
                   ? Container(
-                      height: (MediaQuery.of(context).size.height -
+                      height: (mediaQuery.size.height -
                               appBar.preferredSize.height -
-                              MediaQuery.of(context).padding.top) *
+                              mediaQuery.padding.top) *
                           .8,
                       child: Chart(_recentTranactions))
                   : txList,
