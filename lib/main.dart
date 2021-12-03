@@ -142,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Chart(_recentTranactions),
               ),
             if (!isLandScape) txList, //executes only in portrait
-            if (isLandScape) //show char or bar depending on the switch and also if only in landscape
+            if (isLandScape) //show chart or list depending on the switch and also if only in landscape
               _showChart
                   ? Container(
                       height: (MediaQuery.of(context).size.height -
